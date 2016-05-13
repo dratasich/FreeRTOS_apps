@@ -444,8 +444,8 @@ uint8_t ucHighByte, ucLowByte;
 	 * the context is saved at the start of vPortYieldFromTick().  The tick
 	 * count is incremented after the context is saved.
 	 */
-	void SIG_OUTPUT_COMPARE1A( void ) __attribute__ ( ( signal, naked ) );
-	void SIG_OUTPUT_COMPARE1A( void )
+        ISR( TIMER1_COMPA_vect, ISR_NAKED ) __attribute__ ( ( signal, naked ) );
+	ISR( TIMER1_COMPA_vect, ISR_NAKED )
 	{
 		vPortYieldFromTick();
 		asm volatile ( "reti" );
@@ -457,12 +457,9 @@ uint8_t ucHighByte, ucLowByte;
 	 * tick count.  We don't need to switch context, this can only be done by
 	 * manual calls to taskYIELD();
 	 */
-	void SIG_OUTPUT_COMPARE1A( void ) __attribute__ ( ( signal ) );
-	void SIG_OUTPUT_COMPARE1A( void )
+	ISR( TIMER1_COMPA_vect ) __attribute__ ( ( signal ) );
+	ISR( TIMER1_COMPA_vect )
 	{
 		xTaskIncrementTick();
 	}
 #endif
-
-
-	

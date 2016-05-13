@@ -120,10 +120,9 @@ Changes from V4.0.5
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef GCC_MEGA_AVR
-	/* EEPROM routines used only with the WinAVR compiler. */
-	#include <avr/eeprom.h>
-#endif
+
+/* EEPROM routines. */
+#include <avr/eeprom.h>
 
 /* Scheduler include files. */
 #include "FreeRTOS.h"
@@ -292,4 +291,3 @@ void vApplicationIdleHook( void )
 {
 	vCoRoutineSchedule();
 }
-

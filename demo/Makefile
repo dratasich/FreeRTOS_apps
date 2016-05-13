@@ -11,7 +11,7 @@
 #-------------------------------------------------------------------------
 
 # fill in a project name (name of the hexfile generated)
-PROJNAME = freertos_test
+PROJNAME = demo
 
 # target architecture
 MCU = atmega323
@@ -42,7 +42,7 @@ PORT_SRC := $(addprefix $(PORT_DIR),port.c heap_1.c)
 OBJS := $(APP_SRC:.c=.o) $(RTOS_SRC:.c=.o) $(PORT_SRC:.c=.o)
 
 # Flags
-CFLAGS  = -mmcu=$(MCU) -Wall -O0 -I$(APP_INC) -I$(RTOS_INC) -I$(PORT_INC)
+CFLAGS  = -mmcu=$(MCU) -Wall -O0 -g -I$(APP_INC) -I$(RTOS_INC) -I$(PORT_INC)
 LDFLAGS	= -mmcu=$(MCU)
 OCFLAGS	= -O $(BINFORMAT)
 PRFLAGS = -c $(DEVICE) -b $(BAUD) -p $(MC) -P $(PORT) -e -v -v
