@@ -34,7 +34,7 @@ RTOS_INC := $(addprefix $(RTOS_DIR),include/)
 RTOS_SRC := $(addprefix $(RTOS_DIR),list.c queue.c tasks.c croutine.c) # timers.c event_groups.c
 
 # port sources
-PORT_DIR = ../FreeRTOS_source_ATmega323/
+PORT_DIR = ../port/ATmega323/
 PORT_INC = $(PORT_DIR)
 PORT_SRC := $(addprefix $(PORT_DIR),port.c heap_1.c)
 

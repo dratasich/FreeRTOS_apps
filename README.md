@@ -3,7 +3,7 @@ Applications using FreeRTOS on ATmega2560
 
 * /FreeRTOS_source/ is a symlink to the "Source"-folder of FreeRTOS
 
-* /FreeRTOS_source_ATmega2560/ contains the port for ATmega2560, i.e.,
+* /port/ contains the ports for microcontrollers (e.g., ATmega2560), i.e.,
   configurations and implementations specific to the microcontroller FreeRTOS
   should run on.
 
